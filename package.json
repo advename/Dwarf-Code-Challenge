@@ -26,8 +26,10 @@
     "eject": "react-scripts eject",
     "lint:css": "stylelint './src/**/*.scss'",
     "lint:js": "eslint --ext .js,.cjs,.mjs,.ts,.tsx src/",
+    "lint": "yarn run lint:js && yarn run lint:css",
     "fix:css": "stylelint './src/**/*.scss' --fix",
-    "fix:js": "eslint --ext .js,.cjs,.mjs,.ts,.tsx src/ --fix"
+    "fix:js": "eslint --ext .js,.cjs,.mjs,.ts,.tsx src/ --fix",
+    "fix": "yarn run fix:js && yarn run fix:css"
   },
   "eslintConfig": {
     "extends": [
