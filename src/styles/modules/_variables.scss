@@ -1,0 +1,24 @@
+/*
+ * Override Bootstrap Variables
+ * @see https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
+ */
+@import './functions';
+
+// Typography
+$font-family-sans-serif: 'HelveticaNeue-Light', 'Helvetica Neue Light',
+  'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$font-weight-normal: 300;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+// Colors
+$primary: #ba2329;
+$secondary: #007ddb;
+$white: #fff;
+$dark: #212529;
+
+// Font color
+// $body-color: $primary;
+$navbar-light-color: tint($primary, 30%);
+$navbar-light-hover-color: tint($primary, 10%);
+$navbar-light-active-color: $primary;

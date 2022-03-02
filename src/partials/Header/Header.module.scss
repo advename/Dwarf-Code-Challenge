@@ -1,0 +1,18 @@
+@import './../../styles/modules/variables';
+
+.navWrapper {
+  flex: 1;
+  justify-content: space-between;
+}
+
+.brand {
+  background: rgb(0, 0, 0);
+}
+
+:global {
+  :local(.navLink) {
+    &.active {
+      font-weight: $font-weight-bold;
+    }
+  }
+}
