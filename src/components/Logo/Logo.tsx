@@ -19,11 +19,11 @@ type LogoProps = {
  * @param {LogoProps} props
  * @returns { JSX.Element }
  */
-function Logo (props: Keyable): JSX.Element {
+function Logo(props: LogoProps): JSX.Element {
   return (
     <div style={{
       height: 'auto',
-      width : props.size > 0 ? `${props.size}` : '40px',
+      width: props?.size ? `${props.size}` : '40px',
     }}
     >
       <svg
