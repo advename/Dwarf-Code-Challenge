@@ -2,11 +2,11 @@
  * Override Bootstrap Variables
  * @see https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
  */
-@import "./functions";
+@import './functions';
 
 // Typography
-$font-family-sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light",
-  "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-family-sans-serif: 'HelveticaNeue-Light', 'Helvetica Neue Light',
+  'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 $font-weight-normal: 300;
 $font-weight-bold: 700;
 $font-weight-bolder: bolder;
