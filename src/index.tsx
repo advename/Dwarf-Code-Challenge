@@ -3,10 +3,19 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import { BrowserRouter } from 'react-router-dom'
+import { ToastProvider, ToastContainer } from './components/Toast'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ToastProvider>
+        <>
+          <App />
+          <ToastContainer />
+        </>
+      </ToastProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.querySelector('#root'),
 )

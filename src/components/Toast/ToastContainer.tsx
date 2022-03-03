@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { ToastContainer as BSToastContainer } from 'react-bootstrap'
 import { ToastItem } from './ToastItem'
 
 import { useToastStateContext } from './ToastContext'
@@ -13,9 +14,11 @@ import { useToastStateContext } from './ToastContext'
  */
 function ToastContainer (): JSX.Element {
   const { toasts } = useToastStateContext()
-
   return (
-    <div>
+    <BSToastContainer
+      position='bottom-end'
+      style={{ margin: '10px' }}
+    >
       {toasts
         && toasts.map((toast) => (
           <ToastItem
@@ -26,7 +29,7 @@ function ToastContainer (): JSX.Element {
             type={toast.type}
           />
         ))}
-    </div>
+    </BSToastContainer>
   )
 }
 

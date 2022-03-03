@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Navbar, Nav, Container } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 
 import { Logo } from '../../components/Logo'
 
@@ -16,26 +17,32 @@ function Header (): JSX.Element {
     <header>
       <Navbar >
         <Container >
-          <Nav className={['me-auto', styles.navWrapper].join(' ')}>
+          <Nav
+            className={[
+              'me-auto',
+              'justify-content-md-between',
+              'flex-grow-1',
+            ].join(' ')}
+          >
             <Logo />
-            <Nav.Link
-              className={styles.navLink}
-              href="#home"
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              className={styles.navLink}
-              href="#features"
-            >
-              Features
-            </Nav.Link>
-            <Nav.Link
-              className={styles.navLink}
-              href="#pricing"
-            >
-              Pricing
-            </Nav.Link>
+            <Nav.Item>
+              <Nav.Link
+                as={NavLink}
+                className={styles.navLink}
+                to="/"
+              >
+                Home
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                as={NavLink}
+                className={styles.navLink}
+                to="/contact"
+              >
+                Kontakt
+              </Nav.Link>
+            </Nav.Item>
           </Nav>
         </Container>
       </Navbar>

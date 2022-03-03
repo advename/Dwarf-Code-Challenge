@@ -2,11 +2,11 @@
  * Override Bootstrap Variables
  * @see https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
  */
-@import './functions';
+@import "./functions";
 
 // Typography
-$font-family-sans-serif: 'HelveticaNeue-Light', 'Helvetica Neue Light',
-  'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$font-family-sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light",
+  "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $font-weight-normal: 300;
 $font-weight-bold: 700;
 $font-weight-bolder: bolder;
@@ -14,8 +14,21 @@ $font-weight-bolder: bolder;
 // Colors
 $primary: #ba2329;
 $secondary: #007ddb;
+
 $white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
 $dark: #212529;
+$black: #000;
+
+$info: $gray-300;
 
 // Font color
 // $body-color: $primary;

@@ -1,22 +1,25 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 
-import './styles/index.scss'
+import { useRoutes } from 'react-router-dom'
 
-import { ToastProvider } from './components/Toast'
 import { Header } from './partials/Header'
 
+import { routes } from './routes'
+
+import './styles/index.scss'
 /**
  * @returns {JSX.Element}
  */
 function App (): JSX.Element {
-  return (
-    <ToastProvider>
-      <>
-        <Header />
-        asdasdsad
-      </>
+  const constructedRoutes = useMemo(() => routes(), [])
+  const routing           = useRoutes(constructedRoutes)
 
-    </ToastProvider>
+  return (
+    <>
+      <Header />
+      {routing}
+    </>
+
   )
 }
 

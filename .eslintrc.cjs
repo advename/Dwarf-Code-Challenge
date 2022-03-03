@@ -1,4 +1,3 @@
-// eslint-disable-next-line unicorn/prefer-module
 module.exports = {
   env: {
     browser : true,
@@ -72,10 +71,14 @@ module.exports = {
         },
       },
     ],
-    'no-var'              : 'error',
-    'prefer-template'     : 'error',
-    'linebreak-style'     : ['error', 'unix'],
-    'no-console'          : ['error', { allow: ['warn', 'error'] }],
+    'no-var'         : 'error',
+    'prefer-template': 'error',
+    'linebreak-style': ['error', 'unix'],
+    'no-console'     : [
+      ...(process.env.NODE_ENV === 'production'
+        ? ['error', { allow: ['warn', 'error'] }]
+        : ['off']),
+    ],
     'prefer-const'        : ['error', { destructuring: 'all' }],
     'quote-props'         : ['error', 'consistent-as-needed'],
     'object-curly-spacing': ['error', 'always'],
@@ -104,7 +107,9 @@ module.exports = {
         checkProperties         : false,
         checkShorthandProperties: false,
         allowList               : {
-          getErrMsg: true, props: true, Props: true,
+          getErrMsg: true,
+          props    : true,
+          Props    : true,
         },
         ignore: [/^.*?react-app-env.*?$/i],
       },
@@ -206,8 +211,8 @@ module.exports = {
       },
     },
     {
-      files: ['*.tsx'], 
-      rules: { 'unicorn/filename-case': ['error', { case: 'pascalCase', ignore: ['useToast.tsx'] }] },
+      files: ['*.tsx'],
+      rules: { 'unicorn/filename-case': ['error', { case: 'pascalCase', ignore: ['useToast.tsx', 'routes.tsx'] }] },
     },
   ],
   globals: {

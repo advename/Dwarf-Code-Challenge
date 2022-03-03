@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Toast as BSToast } from 'react-bootstrap'
 
@@ -24,6 +24,16 @@ type ToastItemType = {
 };
 
 /**
+ * Mapping of types and their Bootstrap color variants.
+ */
+const typeVariants = {
+  INFO   : 'info',
+  SUCCESS: 'success',
+  WARNING: 'warning',
+  ERROR  : 'danger',
+}
+
+/**
  * Single Toast Modal box.
  *
  * @param {ToastItemType} options
@@ -36,26 +46,29 @@ type ToastItemType = {
 function ToastItem ({ title, type = 'INFO', message, lifespan = 4000 }: ToastItemType): JSX.Element {
   const [show, setShow] = useState(true)
 
+  const getTitle = (): string => {
+    return title || type.charAt(0).toUpperCase() + type.slice(1)
+  }
+
   return (
     <BSToast
       autohide
+      bg={typeVariants[type]}
       delay={lifespan}
       onClose={(): void => setShow(false)}
       show={show}
     >
-      {title
-        && (
-          <BSToast.Header>
-            {title}
-          </BSToast.Header>
-        )}
+      <BSToast.Header>
+        <strong className='me-auto'>
+          {getTitle()}
+        </strong>
+      </BSToast.Header>
       {message
         && (
           <BSToast.Body>
             {message}
           </BSToast.Body>
         )}
-
     </BSToast>
   )
 }
