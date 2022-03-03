@@ -15,7 +15,7 @@ import { useEffect } from 'react'
  * @param {string} title
  */
 export function useTitle (title: string): void {
-  const appendDefaultText = ' | Userneeds Member Portal'
+  const appendDefaultText = ' | Sundown Boulevard'
   useEffect(() => {
     const previousTitle = document.title
     document.title      = title + appendDefaultText

@@ -99,6 +99,7 @@ module.exports = {
       'always',
       { markers: ['*'] },
     ],
+    'import/no-default-export'     : ['error'],
     'unicorn/catch-error-name'     : ['error', { name: 'error' }],
     'unicorn/filename-case'        : 'off',
     'unicorn/prevent-abbreviations': [
@@ -208,6 +209,7 @@ module.exports = {
         '@typescript-eslint/indent'                        : ['error', 2],
         '@typescript-eslint/no-use-before-define'          : ['error'],
         '@typescript-eslint/no-var-requires'               : 'error',
+        '@typescript-eslint/no-explicit-any'               : 'error',
       },
     },
     {
@@ -216,8 +218,6 @@ module.exports = {
     },
   ],
   globals: {
-    $      : true,
-    jQuery : true,
     process: true,
     JSX    : true,
   },

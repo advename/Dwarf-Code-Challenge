@@ -1,7 +1,5 @@
 import React from 'react'
 
-import type { Keyable } from '../../types/globals'
-
 type LogoProps = {
   /**
    * Logo size (in px).
